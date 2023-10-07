@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="300dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/see_all_item_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:src="@color/violet"
+        app:shapeAppearanceOverlay="@style/circular"
+        app:strokeColor="#9a5c5c5c"
+        app:strokeWidth="1dp" />
+</androidx.appcompat.widget.LinearLayoutCompat>
