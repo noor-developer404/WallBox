@@ -29,7 +29,7 @@ class main_adapter(var context: Context, var array: ArrayList<String>) :
     }
 
     override fun onBindViewHolder(holder: holder, position: Int) {
-       Picasso.get().load("http://find10.in/wallbox/wallpapers/" + this.array.get(position)).into(holder.imagview)
+       Picasso.get().load("http://192.168.194.30/wallbox/wallpapers/" + this.array.get(position)).into(holder.imagview)
         holder.itemView.setOnClickListener(View.OnClickListener {
             var intent = Intent(context,set_wallpaper::class.java)
             intent.putExtra("wall_name",array[position])

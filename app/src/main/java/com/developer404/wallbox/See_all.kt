@@ -9,13 +9,14 @@ import com.developer404.wallbox.other.see_all_adapter
 
 class See_all : AppCompatActivity() {
     lateinit var binding: ActivitySeeAllBinding
-    lateinit var array :Array<response>
+    var array :ArrayList<String> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySeeAllBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        array= emptyArray()
 
+        array = intent.getStringArrayListExtra("array")!!
+//        binding.seeAllToolbar.title=intent.getStringExtra("category")
         binding.seeAllRv.layoutManager=GridLayoutManager(this,2)
         binding.seeAllRv.adapter=see_all_adapter(this,array)
     }

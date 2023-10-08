@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity(),OnClickListener {
         val url = "http://192.168.194.30/wallbox/fetch.php"
         Volley.newRequestQueue(this).add(JsonArrayRequest(Request.Method.GET,url,null,
             {
-                for (i in 0..it.length()){
+                for (i in 0..it.length()-1){
                     var jsonobject = it.getJSONObject(i)
                    var category= jsonobject.get("category")
                     var color =jsonobject.get("color")
@@ -124,22 +124,74 @@ class MainActivity : AppCompatActivity(),OnClickListener {
     }
 
     override fun onClick(p0: View?) {
+        var intent = Intent(this,See_all::class.java)
         if (p0 != null) {
             when(p0.id){
-                R.id.main_see_nature-> {
-                    var intent = Intent(this,See_all::class.java)
+                R.id.main_see_trending-> {
+                    intent.putExtra("array",trendingArray)
+                    intent.putExtra("category","Trending")
                     startActivity(intent)
                 }
-                R.id.main_see_cars-> {var intent = Intent(this,See_all::class.java)
-                    startActivity(intent)}
-                R.id.main_see_bikes-> {var intent = Intent(this,See_all::class.java)
-                    startActivity(intent)}
-                R.id.main_see_vectors-> {var intent = Intent(this,See_all::class.java)
-                    startActivity(intent)}
-                R.id.main_see_animals-> {var intent = Intent(this,See_all::class.java)
-                    startActivity(intent)}
-                R.id.main_see_cities-> {var intent = Intent(this,See_all::class.java)
-                    startActivity(intent)}
+                R.id.main_see_nature-> {
+                    intent.putExtra("array",natureArray)
+                    intent.putExtra("category","Nature")
+                    startActivity(intent)
+                }
+                R.id.main_see_cars-> {
+                    intent.putExtra("array",carsArray)
+                    intent.putExtra("category","Cars")
+                    startActivity(intent)
+                }
+                R.id.main_see_bikes-> {
+                    intent.putExtra("array",bikesArray)
+                    intent.putExtra("category","Bikes")
+                    startActivity(intent)
+                }
+                R.id.main_see_vectors-> {
+                    intent.putExtra("array",vectorsArray)
+                    intent.putExtra("category","Vectors")
+                    startActivity(intent)
+                }
+                R.id.main_see_animals-> {
+                    intent.putExtra("array",animalsArray)
+                    intent.putExtra("category","Animals")
+                    startActivity(intent)
+                }
+                R.id.main_see_cities-> {
+                    intent.putExtra("array",citiesArray)
+                    intent.putExtra("category","Cities")
+                    startActivity(intent)
+                }
+                R.id.main_color_light-> {
+                    intent.putExtra("array",lightArray)
+                    intent.putExtra("category","Light")
+                    startActivity(intent)
+                }
+                R.id.main_color_dark-> {
+                    intent.putExtra("array",darkArray)
+                    intent.putExtra("category","Dark")
+                    startActivity(intent)
+                }
+                R.id.main_color_blue-> {
+                    intent.putExtra("array",blueArray)
+                    intent.putExtra("category","Blue")
+                    startActivity(intent)
+                }
+                R.id.main_color_green-> {
+                    intent.putExtra("array",greenArray)
+                    intent.putExtra("category","Green")
+                    startActivity(intent)
+                }
+                R.id.main_color_red-> {
+                    intent.putExtra("array",redArray)
+                    intent.putExtra("category","Red")
+                    startActivity(intent)
+                }
+                R.id.main_color_orange-> {
+                    intent.putExtra("array",orangeArray)
+                    intent.putExtra("category","Orange")
+                    startActivity(intent)
+                }
 
             }
         }
